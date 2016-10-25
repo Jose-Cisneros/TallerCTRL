@@ -1,19 +1,19 @@
-#include <iostream>
-using namespace std;
+#include "head.h"
+
 
 int main()
 {
-cout << "eee" "\n";
-cout << "eee" "\n";
-cout << "eee" "\n";
+out << "eee" "\n";
+out << "eee" "\n";
+out << "eee" "\n";
 
-cout << "eee" "\n";
-cout << "eee" "\n";
-cout << "eee" "\n";
+out << "eee" "\n";
+out << "eee" "\n";
+out << "eee" "\n";
 
-cout << "eee" "\n";
-cout << "eee" "\n";
-cout << "eee" "\n";
+out << "eee" "\n";
+out << "eee" "\n";
+out << "eee" "\n";
 
-
+Empleado jose("joseci","pepepe","jdsjdo",2233,22424,1);
 }
