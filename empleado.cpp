@@ -1,4 +1,4 @@
-#include "empleado.h"
+#include <empleado.h>
 
 Empleado::Empleado(QString nomb, QString apell,QString direc, int nrodni, int tel, int nroEmp) //constructor
 {
@@ -17,27 +17,27 @@ QString Empleado::verDireccion()
        return direccion;
 }
 
-Empleado::verDni()
+Empleado::verDoc()
 {
     return dni;
 }
 
-QString Empleado::verNombre()
+QString Empleado::verNom()
 {
     return nombre;
 }
 
-Empleado::verNro()
+Empleado::verNroE()
 {
     return nroDeEmpleado;
 }
 
-Empleado::verTel()
+Empleado::verTele()
 {
     return telefono;
 }
 
-QString Empleado::verApellido()
+QString Empleado::verApe()
 {
     return apellido;
 }

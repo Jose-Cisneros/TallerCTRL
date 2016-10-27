@@ -1,19 +1,18 @@
-#include "head.h"
-
+#include <head.h>
+#include <QTextStream>
+QTextStream cout(stdout);
 
 int main()
 {
-out << "eee" "\n";
-out << "eee" "\n";
-out << "eee" "\n";
 
 
 
-out << "eee" "\n";
-out << "eee" "\n";
-out << "eee" "\n";
+cout << "eee" "\n";
+cout << "eee" "\n";
+cout << "eee" "\n";
 Empleado jose("josecillo","calcalskc","asdasd",22323,2414,142421);
 Empleado chumpoa("JPPPP","PORDAL","ADSAD",40441200,33231330,1);
 Empleado warsaw("santiago","rudolf","47 N1395", 402453,2214463,123455);
-out << jose.verNombre() << "\n";
+cout << jose.verNom() << "\n";
+return 0;
 }
