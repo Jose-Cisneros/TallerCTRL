@@ -9,19 +9,19 @@ class Empleado
 
 public:
 
-    Qint verDni();
-    Qint verTel();
-    Qint verNro();
+    int verDni();
+    int verTel();
+    int verNro();
     QString verDireccion();
     QString verNombre();
     QString verApellido();
-    Empleado(QString nom, QString apellido,QString direccion, Qint dni, Qint telefono,Qint nroDeEmpleado);
+    Empleado(QString nom, QString apellido,QString direccion, int dni, int telefono,int nroDeEmpleado);
 
 
 private:
-    Qint dni;
-    Qint telefono;
-    Qint nroDeEmpleado;
+    int dni;
+    int telefono;
+    int nroDeEmpleado;
     QString direccion;
     QString nombre;
     QString apellido;

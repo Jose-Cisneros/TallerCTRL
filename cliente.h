@@ -1,24 +1,24 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
-
+#include <head.h>
 
 class Cliente
 {
 public:
 
-    Qint verDni();
-    Qint verTel();
-    Qint verNro();
+    int verDni();
+    int verTel();
+    int verNro();
     QString verDireccion();
     QString verNombre();
     QString verApellido();
-    Empleado(QString nom, QString apellido,QString direccion, int dni, int telefono,int nroDeEmpleado);
+ //   Empleado(QString nom , QString apellido,QString direccion, int dni, int telefono,int nroDeEmpleado);
 
 
 private:
-    Qint dni;
-    Qint cuit;
-    Qint nroDeEmpleado;
+    int dni;
+    int cuit;
+    int nroDeEmpleado;
     QString correo;
     QString nombre;
     QString apellido;
