@@ -1,9 +1,8 @@
 #ifndef HEAD_H
 #define HEAD_H
-#include <QTextStream>
-QTextStream out(stdout);
 #include <QtGlobal>
-#include <cliente.h>
+#include <QObject>
+
 
 
 
@@ -11,5 +10,7 @@ QTextStream out(stdout);
 //Clases
 
 #include <empleado.h>
+#include <cliente.h>
+
 
 #endif // HEAD_H

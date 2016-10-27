@@ -1,7 +1,6 @@
 #ifndef CLIENTE_H
 #define CLIENTE_H
 #include <head.h>
-
 class Cliente
 {
 public:
@@ -13,7 +12,7 @@ public:
     QString verCorreo();
     QString verNombre();
     QString verApellido();
-Cliente(QString nomb , QString ape,QString mail, int doc, int tele,int cui);
+    Cliente(QString nomb , QString ape,QString mail, int doc, int tele,int cui);
 
 private:
     int dni;

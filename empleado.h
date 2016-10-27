@@ -1,7 +1,7 @@
 #ifndef EMPLEADO_H
 #define EMPLEADO_H
+#include <head.h>
 
-#include <QObject>
 
 
 class Empleado
@@ -9,12 +9,12 @@ class Empleado
 
 public:
 
-    int verDni();
-    int verTel();
-    int verNro();
+    int verDoc();
+    int verTele();
+    int verNroE();
     QString verDireccion();
-    QString verNombre();
-    QString verApellido();
+    QString verNom();
+    QString verApe();
     Empleado(QString nom, QString apellido,QString direccion, int dni, int telefono,int nroDeEmpleado);
 
 
