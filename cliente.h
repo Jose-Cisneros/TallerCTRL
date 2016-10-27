@@ -1,12 +1,9 @@
-#ifndef EMPLEADO_H
-#define EMPLEADO_H
-
-#include <QObject>
+#ifndef CLIENTE_H
+#define CLIENTE_H
 
 
-class Empleado
+class Cliente
 {
-
 public:
 
     Qint verDni();
@@ -15,17 +12,17 @@ public:
     QString verDireccion();
     QString verNombre();
     QString verApellido();
-    Empleado(QString nom, QString apellido,QString direccion, Qint dni, Qint telefono,Qint nroDeEmpleado);
+    Empleado(QString nom, QString apellido,QString direccion, int dni, int telefono,int nroDeEmpleado);
 
 
 private:
     Qint dni;
-    Qint telefono;
+    Qint cuit;
     Qint nroDeEmpleado;
-    QString direccion;
+    QString correo;
     QString nombre;
     QString apellido;
 
 };
 
-#endif // EMPLEADO_H
+#endif // CLIENTE_H

@@ -2,12 +2,12 @@
 
 Empleado::Empleado(QString nomb, QString apell,QString direc, int nrodni, int tel, int nroEmp) //constructor
 {
-nomb = nombre;
-apell = apellido;
-direc = direccion;
-nrodni = dni;
-tel = telefono;
-nroEmp = nroDeEmpleado;
+nombre = nomb;
+apellido = apell;
+direccion = direc;
+dni = nrodni;
+telefono = tel;
+nroDeEmpleado = nroEmp;
 }
 
 //ver

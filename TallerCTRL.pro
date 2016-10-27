@@ -10,8 +10,10 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    empleado.cpp
+    empleado.cpp \
+    cliente.cpp
 
 HEADERS += \
     head.h \
-    empleado.h
+    empleado.h \
+    cliente.h

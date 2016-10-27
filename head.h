@@ -2,6 +2,8 @@
 #define HEAD_H
 #include <QTextStream>
 QTextStream out(stdout);
+#include <Q>
+
 
 
 //Clases
