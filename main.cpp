@@ -7,9 +7,7 @@ out << "eee" "\n";
 out << "eee" "\n";
 out << "eee" "\n";
 
-out << "eee" "\n";
-out << "eee" "\n";
-out << "eee" "\n";
+
 
 out << "eee" "\n";
 out << "eee" "\n";
