@@ -3,6 +3,7 @@
 #include <QTextStream>
 QTextStream out(stdout);
 #include <QtGlobal>
+#include <cliente.h>
 
 
 

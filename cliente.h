@@ -9,16 +9,16 @@ public:
     int verDni();
     int verTel();
     int verNro();
-    QString verDireccion();
+    int verCuit();
+    QString verCorreo();
     QString verNombre();
     QString verApellido();
- //   Empleado(QString nom , QString apellido,QString direccion, int dni, int telefono,int nroDeEmpleado);
-
+Cliente(QString nomb , QString ape,QString mail, int doc, int tele,int cui);
 
 private:
     int dni;
     int cuit;
-    int nroDeEmpleado;
+    int nroTel;
     QString correo;
     QString nombre;
     QString apellido;
