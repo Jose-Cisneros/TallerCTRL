@@ -1,7 +1,6 @@
 #include<cliente.h>
 
 Cliente::Cliente(QString nomb , QString ape, QString mail, int doc, int tele,int cui)
-
 {
 nombre = nomb;
 apellido = ape;

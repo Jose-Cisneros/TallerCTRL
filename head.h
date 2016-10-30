@@ -2,7 +2,10 @@
 #define HEAD_H
 #include <QtGlobal>
 #include <QObject>
+#include <QTextStream>
 
+
+//GUI
 
 
 
