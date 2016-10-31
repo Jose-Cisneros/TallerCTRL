@@ -1,19 +1,20 @@
-QT += core
-QT -= gui
+#-------------------------------------------------
+#
+# Project created by QtCreator 2016-10-30T22:16:12
+#
+#-------------------------------------------------
 
-CONFIG += c++11
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = TallerCTRL
-CONFIG += console
-CONFIG -= app_bundle
-
 TEMPLATE = app
 
-SOURCES += main.cpp \
-    empleado.cpp \
-    cliente.cpp
 
-HEADERS += \
-    head.h \
-    empleado.h \
-    cliente.h
+SOURCES += main.cpp\
+        taller.cpp
+
+HEADERS  += taller.h
+
+FORMS    += taller.ui
