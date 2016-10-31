@@ -15,7 +15,7 @@ public:
     QString verCorreo();
     QString verRS();
 
-    Proveedores(QString nom,int tele,int tele2,QString correo,int nroProv,QString razonS);
+    proveedores(QString nom,int tele,int tele2,QString correo,int nroProv,QString razonS);
 
 
 private:

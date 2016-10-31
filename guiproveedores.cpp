@@ -19,5 +19,4 @@ void guiproveedores::on_pushButton_clicked()
    guiprov_nuevo guiPN ;
    guiPN.setModal(true);
    guiPN.exec();
-
 }

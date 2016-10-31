@@ -15,6 +15,9 @@ public:
     explicit guiprov_nuevo(QWidget *parent = 0);
     ~guiprov_nuevo();
 
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::guiprov_nuevo *ui;
 };

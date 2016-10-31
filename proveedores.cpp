@@ -1,12 +1,12 @@
 #include "proveedores.h"
 
-proveedores::Proveedores(QString nom,int tele,int tele2,QString correo,int nroProv,QString razonS)
+proveedores::proveedores(QString nom,int tele,int tele2,QString correo,int nroProv,QString razonS)
 
 {
 razonSocial = razonS;
  nombre = nom;
 telefono2 = tele2;
- telefono = telefono;
+ telefono = tele;
  nroDeProv = nroProv ;
  email = correo;
 

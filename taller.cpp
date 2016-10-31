@@ -1,6 +1,7 @@
 #include "taller.h"
 #include "ui_taller.h"
 
+
 //ventanas
 
 #include "guiempleado.h"
