@@ -6,7 +6,7 @@
 
 
 //GUI
-
+#include <QMainWindow>
 
 
 

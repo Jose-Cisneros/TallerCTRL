@@ -13,8 +13,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        taller.cpp
+        taller.cpp \
+    cliente.cpp \
+    empleado.cpp \
+    guiempleado.cpp
 
-HEADERS  += taller.h
+HEADERS  += taller.h \
+    cliente.h \
+    empleado.h \
+    head.h \
+    guiempleado.h
 
-FORMS    += taller.ui
+FORMS    += taller.ui \
+    guiempleado.ui
