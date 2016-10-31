@@ -16,13 +16,16 @@ SOURCES += main.cpp\
         taller.cpp \
     cliente.cpp \
     empleado.cpp \
-    guiempleado.cpp
+    guiempleado.cpp \
+    guiempleado_nuevo.cpp
 
 HEADERS  += taller.h \
     cliente.h \
     empleado.h \
     head.h \
-    guiempleado.h
+    guiempleado.h \
+    guiempleado_nuevo.h
 
 FORMS    += taller.ui \
-    guiempleado.ui
+    guiempleado.ui \
+    guiempleado_nuevo.ui

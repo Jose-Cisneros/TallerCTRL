@@ -4,9 +4,12 @@
 #include <QObject>
 #include <QTextStream>
 
+#include <QList>
+
 
 //GUI
 #include <QMainWindow>
+#include <QMessageBox>
 
 
 
