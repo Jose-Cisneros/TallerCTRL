@@ -3,8 +3,6 @@
 #include <head.h>
 
 
-
-
 class Empleado
 {
 

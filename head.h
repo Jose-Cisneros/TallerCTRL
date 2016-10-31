@@ -12,7 +12,6 @@
 #include <QMessageBox>
 
 
-
 //Clases
 
 #include <empleado.h>

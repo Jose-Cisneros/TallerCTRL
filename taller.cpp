@@ -4,7 +4,7 @@
 //ventanas
 
 #include "guiempleado.h"
-
+#include "guiproveedores.h"
 Taller::Taller(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Taller)
@@ -19,7 +19,9 @@ Taller::~Taller()
 
 void Taller::on_pushButton_clicked()
 {
-
+guiproveedores  guiP;
+guiP.setModal(true);
+guiP.exec();
 }
 
 void Taller::on_pushButton_2_clicked()
