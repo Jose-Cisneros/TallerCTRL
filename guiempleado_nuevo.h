@@ -14,7 +14,11 @@ class guiempleado_nuevo : public QDialog
 public:
     explicit guiempleado_nuevo(QWidget *parent = 0);
     ~guiempleado_nuevo();
-
+    QString nombre();
+    QString direccion();
+    int dni();
+    int telefono();
+    int saldo();
 private slots:
     void on_buttonBox_rejected();
 

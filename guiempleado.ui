@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>483</width>
+    <width>661</width>
     <height>362</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>40</x>
      <y>30</y>
-     <width>411</width>
+     <width>511</width>
      <height>279</height>
     </rect>
    </property>
@@ -39,11 +39,16 @@
    </column>
    <column>
     <property name="text">
+     <string>DNI</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Salario</string>
     </property>
    </column>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -61,23 +66,16 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>Eliminar</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QPushButton" name="pushButton_3">
       <property name="text">
-       <string>PushButton</string>
+       <string>Guardar y volver</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_4">
       <property name="text">
-       <string>Volver al menú</string>
+       <string>volver sin guardar</string>
       </property>
      </widget>
     </item>

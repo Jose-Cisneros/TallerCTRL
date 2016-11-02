@@ -10,6 +10,7 @@ GUIEmpleado::GUIEmpleado(QWidget *parent) :
     ui(new Ui::GUIEmpleado)
 {
     ui->setupUi(this);
+
 }
 
 GUIEmpleado::~GUIEmpleado()
@@ -25,7 +26,19 @@ void GUIEmpleado::on_pushButton_4_clicked()
 //nuevo
 void GUIEmpleado::on_pushButton_clicked()
 {
-    guiempleado_nuevo guiEN; //creo el objeto
+    int res;
+    guiempleado_nuevo guiEN(this); //creo el objeto
+    guiEN.setWindowTitle("Nuevo empleado");
     guiEN.setModal(true);
-    guiEN.exec();
+    res = guiEN.exec();
+    QString nom;
+    nom = guiEN.nombre();
+    if (res == QDialog::Accepted){
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0, new QTableWidgetItem(guiEN.nombre()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1, new QTableWidgetItem(QString::number(guiEN.telefono())));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2, new QTableWidgetItem(guiEN.direccion()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3, new QTableWidgetItem(QString::number(guiEN.dni())));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,4, new QTableWidgetItem(QString::number(guiEN.saldo())));
+    }
 }

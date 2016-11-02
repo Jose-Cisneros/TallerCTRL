@@ -49,20 +49,16 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="apellido"/>
+     <widget class="QLineEdit" name="dni"/>
     </item>
     <item>
-     <widget class="QLineEdit" name="dni"/>
+     <widget class="QLineEdit" name="telefono"/>
     </item>
     <item>
      <widget class="QLineEdit" name="direccion"/>
     </item>
     <item>
-     <widget class="QDoubleSpinBox" name="doubleSpinBox">
-      <property name="maximum">
-       <double>10000000.000000000000000</double>
-      </property>
-     </widget>
+     <widget class="QSpinBox" name="saldo"/>
     </item>
    </layout>
   </widget>
