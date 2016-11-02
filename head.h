@@ -5,7 +5,7 @@
 #include <QTextStream>
 
 #include <QList>
-
+#include <QSet>
 
 //GUI
 #include <QMainWindow>

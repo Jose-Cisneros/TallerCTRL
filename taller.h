@@ -1,6 +1,8 @@
 #ifndef TALLER_H
 #define TALLER_H
 
+#include "head.h"
+
 #include <QMainWindow>
 
 namespace Ui {
@@ -14,6 +16,7 @@ class Taller : public QMainWindow
 public:
     explicit Taller(QWidget *parent = 0);
     ~Taller();
+
 
 private slots:
     void on_pushButton_clicked();

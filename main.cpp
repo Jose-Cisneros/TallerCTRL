@@ -4,9 +4,7 @@
 
 #include <QTextStream>
 
-QString hola;
 
-QTextStream cout(stdout);
 
 
 int main(int argc, char *argv[])
