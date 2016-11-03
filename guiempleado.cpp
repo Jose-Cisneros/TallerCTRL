@@ -1,5 +1,6 @@
 #include "guiempleado.h"
 #include "ui_guiempleado.h"
+#include "taller.h"
 
 //ventanas
 #include "guiempleado_nuevo.h"
@@ -10,6 +11,7 @@ GUIEmpleado::GUIEmpleado(QWidget *parent) :
     ui(new Ui::GUIEmpleado)
 {
     ui->setupUi(this);
+    ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
 }
 
@@ -40,5 +42,13 @@ void GUIEmpleado::on_pushButton_clicked()
         ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2, new QTableWidgetItem(guiEN.direccion()));
         ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3, new QTableWidgetItem(QString::number(guiEN.dni())));
         ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,4, new QTableWidgetItem(QString::number(guiEN.saldo())));
+    }
+}
+
+void GUIEmpleado::on_pushButton_3_clicked()
+{   int i;
+    for( i= 0; i <= ui->tableWidget->rowCount()-1;i++){
+    ui->tableWidget->selectRow(i);
+    ui->tableWidget->selectColumn(0);
     }
 }

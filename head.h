@@ -6,6 +6,8 @@
 
 #include <QList>
 #include <QSet>
+#include <QFile>
+#include <QStringList>
 
 //GUI
 #include <QMainWindow>
