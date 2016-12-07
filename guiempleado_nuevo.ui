@@ -58,7 +58,11 @@
      <widget class="QLineEdit" name="direccion"/>
     </item>
     <item>
-     <widget class="QSpinBox" name="saldo"/>
+     <widget class="QSpinBox" name="saldo">
+      <property name="maximum">
+       <number>9999999</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
