@@ -25,32 +25,8 @@ void guiempleado_nuevo::on_buttonBox_rejected()
 
 void guiempleado_nuevo::on_buttonBox_accepted()
 {
-    //variables
-//    QString nom;
-//    QString direcc;
-//    int tel;
-//    int doc;
-//    double sal;
-
-//    //int nroEmp;
-//    //nroEmp = 01;
-
-
-//    direcc = ui->direccion->text();
-//    tel = ui->telefono->text().toInt();
-//    doc = ui->dni->text().toInt();
-//    sal = ui->saldo->value();
-//Empleado nuevo(nom,ape,direcc,doc,tel,nroEmp);
-
-
-
-
-
-//    QMessageBox::about(this,"empleado","Empleado añadido correctamente");
-//    this->close();
 
     accept();
-
 
 }
 

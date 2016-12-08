@@ -14,9 +14,16 @@ class guiprov_nuevo : public QDialog
 public:
     explicit guiprov_nuevo(QWidget *parent = 0);
     ~guiprov_nuevo();
+    int nrop();
+    int tele1();
+    int tele2();
+    QString nombre();
+    QString rsoc();
+    QString mail();
 
 private slots:
     void on_buttonBox_accepted();
+    void on_buttonBox_rejected();
 
 private:
     Ui::guiprov_nuevo *ui;

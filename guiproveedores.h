@@ -2,6 +2,7 @@
 #define GUIPROVEEDORES_H
 
 #include <QDialog>
+#include "QListWidgetItem"
 
 namespace Ui {
 class guiproveedores;
@@ -16,7 +17,16 @@ public:
     ~guiproveedores();
 
 private slots:
-    void on_pushButton_clicked();
+
+
+    void on_Agregar_clicked();
+
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+
+    void on_Eliminar_clicked();
+
+
+    void on_guardar_clicked();
 
 private:
     Ui::guiproveedores *ui;
