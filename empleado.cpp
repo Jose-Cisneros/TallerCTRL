@@ -1,5 +1,4 @@
 #include <empleado.h>
-#include <string>
 
 Empleado::Empleado(QString nomb, QString apell,QString direc, int nrodni, int tel, int nroEmp) //constructor
 {

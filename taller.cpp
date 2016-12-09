@@ -7,6 +7,9 @@
 
 #include "guiempleado.h"
 #include "guiproveedores.h"
+#include "guiproducto.h"
+
+
 Taller::Taller(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Taller)
@@ -35,4 +38,11 @@ void Taller::on_pushButton_2_clicked()
     guiE.setModal(true);
     guiE.exec();
 
+}
+
+void Taller::on_productos_clicked()
+{
+    GuiProducto guiP; //creo el objeto
+    guiP.setModal(true);
+    guiP.exec();
 }

@@ -2,7 +2,7 @@
 #define GUIPROVEEDORES_H
 
 #include <QDialog>
-#include "QListWidgetItem"
+#include "head.h"
 
 namespace Ui {
 class guiproveedores;

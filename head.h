@@ -13,7 +13,7 @@
 //GUI
 #include <QMainWindow>
 #include <QMessageBox>
-
+#include <QListWidgetItem>
 
 
 //Clases

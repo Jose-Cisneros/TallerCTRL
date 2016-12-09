@@ -54,7 +54,9 @@ void guiproveedores::on_listWidget_itemClicked(QListWidgetItem *item)
 {
     //proveedores a("",0,0,"",0,"");
     proveedores a;
-    a = listaProv.value(ui->listWidget->currentItem()->text());
+    //a = listaProv.value(ui->listWidget->currentItem()->text());
+
+    a = listaProv.value(item->text()); //es lo mismo que lo de arriba
 
     ui->nom->setText(a.verNom());
     ui->tel1->setText(QString::number(a.verTele()));
