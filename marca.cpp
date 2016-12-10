@@ -5,12 +5,12 @@ Marca::Marca()
 
 }
 
-void Marca::agregar(QString nuevo)
+void Marca::agregar(QString &nuevo)
 {
     autos.prepend(nuevo);
 }
 
-void Marca::eliminar(QString car)
+void Marca::eliminar(QString &car)
 {
     int c = autos.indexOf(car);
     autos.removeAt(c);

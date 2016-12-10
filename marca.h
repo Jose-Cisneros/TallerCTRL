@@ -12,8 +12,8 @@ public:
 
 
 
-    void agregar(QString nuevo);
-    void eliminar(QString car);
+    void agregar(QString &nuevo);
+    void eliminar(QString &car);
 
 
     QString getNom();
