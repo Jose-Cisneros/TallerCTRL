@@ -24,7 +24,9 @@ private slots:
 
     void on_listWidget_itemClicked(QListWidgetItem *item);
 
-    void on_listWidget_itemSelectionChanged();
+
+
+
 
 private:
     Ui::guiProd_nuevo *ui;

@@ -317,24 +317,24 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>310</x>
      <y>220</y>
-     <width>121</width>
+     <width>205</width>
      <height>31</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QLabel" name="label_18">
+     <widget class="QRadioButton" name="radioButton">
       <property name="text">
-       <string>Año</string>
+       <string>Filtrar por año</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QSpinBox" name="spinBox">
       <property name="minimum">
-       <number>1900</number>
+       <number>1950</number>
       </property>
       <property name="maximum">
        <number>20000000</number>
