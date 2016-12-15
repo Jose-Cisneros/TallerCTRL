@@ -29,14 +29,14 @@ public:
     proveedores(QString nom,int tele,int tele2,QString correo,int nroProv,QString razonS);
 
 
-    //OPERADOR >> PARA GUARDAR CLASE EN ARCHIVO//
+    //OPERADOR << PARA GUARDAR CLASE EN ARCHIVO//
 
     friend QDataStream &operator <<(QDataStream &out, const proveedores &s)
         {
             out<< s.nombre << s.email << s.nroDeProv << s.razonSocial << s.telefono << s.telefono2;
             return out;
         }
-    //OPERADOR << PARA CARGAR ARCHIVO//
+    //OPERADOR >> PARA CARGAR ARCHIVO//
 
     friend QDataStream &operator >> (QDataStream &in, proveedores &s)
         {

@@ -5,32 +5,32 @@ Producto::Producto()
 }
 
 
-int Producto::getCategoria() const
+QString Producto::getCategoria() const
 {
     return categoria;
 }
 
-void Producto::setCategoria(int value)
+void Producto::setCategoria(QString value)
 {
     categoria = value;
 }
 
-double Producto::getDesc() const
+QString Producto::getDesc() const
 {
     return desc;
 }
 
-void Producto::setDesc(double value)
+void Producto::setDesc(QString value)
 {
     desc = value;
 }
 
-double Producto::getDescuento() const
+int Producto::getDescuento() const
 {
     return descuento;
 }
 
-void Producto::setDescuento(double value)
+void Producto::setDescuento(int value)
 {
     descuento = value;
 }
@@ -55,22 +55,22 @@ void Producto::setModelo(const QString &value)
     modelo = value;
 }
 
-int Producto::getNroPieza() const
+QString Producto::getNroPieza() const
 {
     return nroPieza;
 }
 
-void Producto::setNroPieza(int value)
+void Producto::setNroPieza(QString value)
 {
     nroPieza = value;
 }
 
-double Producto::getPorcentajeSumado() const
+QString Producto::getPorcentajeSumado() const
 {
     return porcentajeSumado;
 }
 
-void Producto::setPorcentajeSumado(double value)
+void Producto::setPorcentajeSumado(QString value)
 {
     porcentajeSumado = value;
 }
@@ -85,32 +85,32 @@ void Producto::setProv(const QString &value)
     Prov = value;
 }
 
-double Producto::getPrecioCompra() const
+QString Producto::getPrecioCompra() const
 {
     return precioCompra;
 }
 
-void Producto::setPrecioCompra(double value)
+void Producto::setPrecioCompra(QString value)
 {
     precioCompra = value;
 }
 
-double Producto::getPrecioLista() const
+QString Producto::getPrecioLista() const
 {
     return precioLista;
 }
 
-void Producto::setPrecioLista(double value)
+void Producto::setPrecioLista(QString value)
 {
     precioLista = value;
 }
 
-double Producto::getPrecioVta() const
+QString Producto::getPrecioVta() const
 {
     return precioVta;
 }
 
-void Producto::setPrecioVta(double value)
+void Producto::setPrecioVta(QString value)
 {
     precioVta = value;
 }
@@ -123,4 +123,14 @@ int Producto::getStock() const
 void Producto::setStock(int value)
 {
     stock = value;
+}
+
+QString Producto::getNom() const
+{
+    return nom;
+}
+
+void Producto::setNom(const QString &value)
+{
+    nom = value;
 }

@@ -10,14 +10,14 @@ public:
     //Constructor default//
     Producto();
 
-    int getCategoria() const;
-    void setCategoria(int value);
+    QString getCategoria() const;
+    void setCategoria(QString value);
 
-    double getDesc() const;
-    void setDesc(double value);
+    QString getDesc() const;
+    void setDesc(QString value);
 
-    double getDescuento() const;
-    void setDescuento(double value);
+    int getDescuento() const;
+    void setDescuento(int value);
 
     QString getMarca() const;
     void setMarca(const QString &value);
@@ -25,40 +25,61 @@ public:
     QString getModelo() const;
     void setModelo(const QString &value);
 
-    int getNroPieza() const;
-    void setNroPieza(int value);
+    QString getNroPieza() const;
+    void setNroPieza(QString value);
 
-    double getPorcentajeSumado() const;
-    void setPorcentajeSumado(double value);
+    QString getPorcentajeSumado() const;
+    void setPorcentajeSumado(QString value);
 
     QString getProv() const;
     void setProv(const QString &value);
 
-    double getPrecioCompra() const;
-    void setPrecioCompra(double value);
+    QString getPrecioCompra() const;
+    void setPrecioCompra(QString value);
 
-    double getPrecioLista() const;
-    void setPrecioLista(double value);
+    QString getPrecioLista() const;
+    void setPrecioLista(QString value);
 
-    double getPrecioVta() const;
-    void setPrecioVta(double value);
+    QString getPrecioVta() const;
+    void setPrecioVta(QString value);
 
     int getStock() const;
     void setStock(int value);
 
+    QString getNom() const;
+    void setNom(const QString &value);
+
+
+    //OPERADOR >> PARA GUARDAR CLASE EN ARCHIVO//
+
+    friend QDataStream &operator <<(QDataStream &out, const Producto &s)
+        {
+            out<< s.nroPieza << s.nom << s.marca << s.modelo << s.categoria << s.stock << s.precioCompra << s.precioLista << s.precioVta << s.descuento << s.Prov <<s.porcentajeSumado;
+            return out;
+        }
+    //OPERADOR << PARA CARGAR ARCHIVO//
+
+    friend QDataStream &operator >> (QDataStream &in, Producto &s)
+        {
+            in>> s.nroPieza >> s.nom >> s.marca >> s.modelo >> s.categoria >> s.stock >> s.precioCompra >> s.precioLista >> s.precioVta >> s.descuento >> s.Prov >> s.porcentajeSumado;
+            return in;
+        }
+
+
 private:
-    int categoria;
-    double desc;
-    double descuento;
+    QString categoria;
+    QString desc;
+    int descuento;
     QString marca;
     QString modelo;
-    int nroPieza;
-    double porcentajeSumado;
-    double precioCompra;
-    double precioLista;
-    double precioVta;
+    QString nroPieza;
+    QString porcentajeSumado;
+    QString precioCompra;
+    QString precioLista;
+    QString precioVta;
     QString Prov;
     int stock;
+    QString nom;
 
 };
 
