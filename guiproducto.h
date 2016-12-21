@@ -18,14 +18,6 @@ public:
 private slots:
     void on_nuevo_clicked();
 
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_clicked();
-
-    void on_comboMarca_currentTextChanged();
-
-    void on_eliminar_clicked();
-
 private:
     Ui::GuiProducto *ui;
 };

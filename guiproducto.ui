@@ -44,6 +44,11 @@
    </column>
    <column>
     <property name="text">
+     <string>Año</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
      <string>Categoria</string>
     </property>
    </column>
@@ -78,7 +83,7 @@
     </property>
    </column>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>51</x>
@@ -111,7 +116,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -159,7 +164,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -187,32 +192,6 @@
      <widget class="QPushButton" name="eliminar">
       <property name="text">
        <string>Eliminar</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>620</x>
-     <y>470</y>
-     <width>221</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_4">
-    <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Guardar y Salir</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>Salir sin guardar</string>
       </property>
      </widget>
     </item>

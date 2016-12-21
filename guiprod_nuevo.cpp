@@ -22,7 +22,7 @@ guiProd_nuevo::guiProd_nuevo(QWidget *parent) :
     ui->nuevo_2->setEnabled(false);
     ui->modificar_2->setEnabled(false);
     ui->eliminar_2->setEnabled(false);
-
+    ui->spinBox->setEnabled(false);
 
 
     QFile file("MMHash");
@@ -33,28 +33,15 @@ guiProd_nuevo::guiProd_nuevo(QWidget *parent) :
     file.close();
 
     //cargo las keys unicas a la lista aux
+
+
     QList<QString> aux = autos.uniqueKeys();
+
+
 
     //recorro la lista y agrego a listWidget_1
     for (int i = 0; i < aux.size(); ++i){
         ui->listWidget->addItem(aux.at(i));
-    }
-
-    QFile file2("PHash");
-    if (!file2.open(QIODevice::ReadOnly))
-        return;
-    QHash<QString,proveedores> pAux;
-    QDataStream in2(&file2);
-    in2 >> pAux ;
-    file2.close();
-
-    //cargo las keys unicas a la lista aux2
-    QList<QString> aux2 = pAux.uniqueKeys();
-
-
-    //recorro la lista y agrego a comboProv
-    for (int i = 0; i < aux2.size(); ++i){
-        ui->comboProv->addItem(aux2.at(i));
     }
 
 }
@@ -63,69 +50,6 @@ guiProd_nuevo::~guiProd_nuevo()
 {
     delete ui;
 }
-
-//funciones para enviar los datos a la ventana de productos
-
-
-QString guiProd_nuevo::nom()
-{
-    return ui->nombre->text();
-}
-
-QString guiProd_nuevo::nroPieza()
-{
-    return ui->num->text();
-}
-
-QString guiProd_nuevo::categoria()
-{
-    return ui->categoria->text();
-}
-
-QString guiProd_nuevo::preC()
-{
-    return ui->preC->text();
-}
-
-QString guiProd_nuevo::preV()
-{
-    return ui->preVta->text();
-}
-
-QString guiProd_nuevo::preL()
-{
-    return ui->preList->text();
-}
-
-QString guiProd_nuevo::prov()
-{
-    return ui->comboProv->currentText();
-}
-
-int guiProd_nuevo::descuento()
-{
-    return ui->descuento->text().toInt();
-}
-
-QString guiProd_nuevo::marca()
-{
-    return ui->listWidget->currentItem()->text();
-}
-
-QString guiProd_nuevo::modelo()
-{
-    return ui->listWidget_2->currentItem()->text();
-}
-
-int guiProd_nuevo::stock()
-{
-    return ui->stock->text().toInt();
-}
-
-
-//funciones para el manejo de datos en esta misma ventana
-
-
 
 void guiProd_nuevo::on_nuevo_clicked()
 {
@@ -170,33 +94,6 @@ void guiProd_nuevo::on_nuevo_2_clicked()
 }
 
 
-
-
-void guiProd_nuevo::imprimirTodos()
-{
-    QList<QString> aux;
-    aux = autos.values(ui->listWidget->currentItem()->text());
-    ui->listWidget_2->clear();
-
-    for (int i = 0; i < aux.size(); ++i){
-        ui->listWidget_2->addItem(aux.at(i));
-    }
-}
-
-
-void guiProd_nuevo::imprimirPorAno()
-{
-    QList<QString> aux;
-    aux = autos.values(ui->listWidget->currentItem()->text());
-    ui->listWidget_2->clear();
-    //solo agrega los que coincidan con el año del spinbox
-    for (int i = 0; i < aux.size(); ++i){
-        if (aux.at(i).contains(ui->spinBox->text())){
-        ui->listWidget_2->addItem(aux.at(i));
-        }
-    }
-}
-
 void guiProd_nuevo::on_listWidget_itemClicked(QListWidgetItem *item)
 {
     ui->nuevo_2->setEnabled(true);
@@ -208,79 +105,25 @@ void guiProd_nuevo::on_listWidget_itemClicked(QListWidgetItem *item)
     QList<QString> aux;
     aux = autos.values(item->text());
 
-    if (ui->radioButton->isChecked()){
+    if (ui->radioButton->isChecked()=true){
 
-            imprimirPorAno();
+            ui->listWidget_2->clear();
+            //agregar para que solo agregue los que coincidan con el año del spinbox
+            for (int i = 0; i < aux.size(); ++i){
+                if (aux.at(i).contains(ui->spinBox->QString::number(text()))=true){
+                ui->listWidget_2->addItem(aux.at(i));
+                }
+            }
+    }
 
-     } else {
-            imprimirTodos();
-     }
+    ui->listWidget_2->clear();
+
+    for (int i = 0; i < aux.size(); ++i){
+        ui->listWidget_2->addItem(aux.at(i));
     }
 
 
-void guiProd_nuevo::on_radioButton_clicked()
-{
-    if (ui->radioButton->isChecked()){
-        imprimirPorAno();
-    } else {
-        imprimirTodos();
-    }
-}
 
-void guiProd_nuevo::on_spinBox_valueChanged()
-{
-    if (ui->radioButton->isChecked()){
-          imprimirPorAno();
-    } else {
-          imprimirTodos();
-    }
-}
-
-void guiProd_nuevo::on_buttonBox_accepted()
-{
-    accept();
 }
 
 
-
-void guiProd_nuevo::on_buttonBox_rejected()
-{
-    reject();
-}
-
-void guiProd_nuevo::on_eliminar_clicked()
-{
-    autos.remove(ui->listWidget->currentItem()->text());
-    qDeleteAll(ui->listWidget->selectedItems());
-}
-
-
-//ARREGLAR ELIMINAR MODELO
-
-
-void guiProd_nuevo::on_eliminar_2_clicked(){}
-//{
-//    QHash<QString, QString> aux;
-//    QHash<QString,QString>::iterator i = aux.find(ui->listWidget->currentItem()->text());
-
-//       while ( {
-//          if (i.value() == ui->listWidget_2->currentItem()->text() ) {
-//             i = aux.erase(i);
-//          } else {
-//              int a= 0;
-//              a++;
-//              qDebug() << a;
-
-//              ++i;
-//          }
-//      }
-//    qDeleteAll(ui->listWidget_2->selectedItems());
-
-//    //actualizo el archivo
-//    QFile file("MMHash");
-//    if (!file.open(QIODevice::WriteOnly))
-//        return;
-//    QDataStream out(&file);
-//    out << autos;
-//    file.close();
-//}

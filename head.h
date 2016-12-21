@@ -21,7 +21,6 @@
 #include <empleado.h>
 #include <cliente.h>
 #include <proveedores.h>
-#include <producto.h>
 
 
 #endif // HEAD_H
