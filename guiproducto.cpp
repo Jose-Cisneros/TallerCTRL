@@ -20,7 +20,7 @@ GuiProducto::GuiProducto(QWidget *parent) :
     // creo la tabla con el archivo
 
     ProductoArchivo archi;
-    archi.cargarProducto(prod,"ProdHash");
+    archi.cargarProductos(prod,"ProdHash");
 
 //FORMA VIEJA SIN CLASE
 
@@ -132,7 +132,7 @@ void GuiProducto::on_pushButton_clicked()
 {
 
     ProductoArchivo archi;
-    archi.guardarProducto(prod,"ProdHash");
+    archi.guardarProductos(prod,"ProdHash");
 
 //    QFile file("ProdHash");
 //    if (!file.open(QIODevice::WriteOnly))

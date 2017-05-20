@@ -6,7 +6,7 @@ ProductoArchivo::ProductoArchivo()
 
 }
 
-void ProductoArchivo::guardarProducto(QHash<QString, Producto> &prod, QString archivo)
+void ProductoArchivo::guardarProductos(QHash<QString, Producto> &prod, QString archivo)
 {
 
     QFile file(archivo);
@@ -18,7 +18,7 @@ void ProductoArchivo::guardarProducto(QHash<QString, Producto> &prod, QString ar
 
 }
 
-void ProductoArchivo::cargarProducto(QHash<QString, Producto> &prod, QString archivo)
+void ProductoArchivo::cargarProductos(QHash<QString, Producto> &prod, QString archivo)
 {
 
     QFile file(archivo);

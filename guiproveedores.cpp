@@ -70,17 +70,13 @@ void guiproveedores::on_listWidget_itemClicked(QListWidgetItem *item)
     ui->Eliminar->setEnabled(true);
     ui->Editar->setEnabled(true);
 
-    QFile file("ProdHash");
-    if (!file.open(QIODevice::ReadOnly))
-        return;
+    QHash<QString,Producto> auxProd ;
 
-    QHash<QString,Producto> auxProd;
+    ProductoArchivo archi;
+    archi.cargarProductos(auxProd,"ProdHash");
 
-    QDataStream in(&file);
 
-    in >> auxProd;
-    file.close();
-    ui->tableWidget->clear();
+    ui->tableWidget->setRowCount(0);
 
 
     QHashIterator<QString,Producto> i(auxProd);

@@ -9,8 +9,8 @@ public:
     ProductoArchivo();
 
 
-    void guardarProducto(QHash<QString,Producto> &prod, QString archivo);
-    void cargarProducto(QHash<QString,Producto> &prod, QString archivo);
+    void guardarProductos(QHash<QString,Producto> &prod, QString archivo);
+    void cargarProductos(QHash<QString,Producto> &prod, QString archivo);
 };
 
 #endif // PRODUCTOSAVE_H
