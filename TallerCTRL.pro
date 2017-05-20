@@ -26,7 +26,9 @@ SOURCES += main.cpp\
     guiprod_nuevo.cpp \
     marca.cpp \
     guiprod_nuevo_marca.cpp \
-    guiprod_nuevo_modelo.cpp
+    guiprod_nuevo_modelo.cpp \
+    empleadosave.cpp \
+    productoArchivo.cpp
 
 HEADERS  += taller.h \
     cliente.h \
@@ -42,7 +44,9 @@ HEADERS  += taller.h \
     guiprod_nuevo.h \
     marca.h \
     guiprod_nuevo_marca.h \
-    guiprod_nuevo_modelo.h
+    guiprod_nuevo_modelo.h \
+    empleadosave.h \
+    productoArchivo.h
 
 FORMS    += taller.ui \
     guiempleado.ui \

@@ -10,7 +10,7 @@
 
 #include <QFile>
 #include <QDataStream>
-#include<QtDebug>
+#include <QtDebug>
 
 static QHash<QString,QString> autos; //Corregir//
 
@@ -32,6 +32,7 @@ guiProd_nuevo::guiProd_nuevo(QWidget *parent) :
     in >> autos;
     file.close();
 
+
     //cargo las keys unicas a la lista aux
     QList<QString> aux = autos.uniqueKeys();
 
@@ -40,13 +41,20 @@ guiProd_nuevo::guiProd_nuevo(QWidget *parent) :
         ui->listWidget->addItem(aux.at(i));
     }
 
+
+    QHash<QString,proveedores> pAux;
+//    ProductoArchivo file;
+//    file.cargarProducto(pAux,"PHash");
+
     QFile file2("PHash");
     if (!file2.open(QIODevice::ReadOnly))
         return;
-    QHash<QString,proveedores> pAux;
+
     QDataStream in2(&file2);
     in2 >> pAux ;
     file2.close();
+
+
 
     //cargo las keys unicas a la lista aux2
     QList<QString> aux2 = pAux.uniqueKeys();
@@ -227,14 +235,7 @@ void guiProd_nuevo::on_radioButton_clicked()
     }
 }
 
-void guiProd_nuevo::on_spinBox_valueChanged()
-{
-    if (ui->radioButton->isChecked()){
-          imprimirPorAno();
-    } else {
-          imprimirTodos();
-    }
-}
+
 
 void guiProd_nuevo::on_buttonBox_accepted()
 {

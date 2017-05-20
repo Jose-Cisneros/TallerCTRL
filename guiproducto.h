@@ -2,6 +2,7 @@
 #define GUIPRODUCTO_H
 
 #include <QDialog>
+#include "productoArchivo.h"
 
 namespace Ui {
 class GuiProducto;

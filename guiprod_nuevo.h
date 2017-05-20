@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "head.h"
+#include "productoArchivo.h"
 
 namespace Ui {
 class guiProd_nuevo;
@@ -38,9 +39,6 @@ private slots:
     void imprimirTodos();
 
     void imprimirPorAno();
-
-
-    void on_spinBox_valueChanged();
 
     void on_radioButton_clicked();
 

@@ -12,17 +12,29 @@ GuiProducto::GuiProducto(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::GuiProducto)
 {
+
+
     ui->setupUi(this);
     ui->pushButton->setEnabled(false);
 
     // creo la tabla con el archivo
-    QFile file("ProdHash");
-    if (!file.open(QIODevice::ReadOnly))
-        return;
-    QDataStream in(&file);
 
-    in >> prod;
-    file.close();
+    ProductoArchivo archi;
+    archi.cargarProducto(prod,"ProdHash");
+
+//FORMA VIEJA SIN CLASE
+
+
+        //    QFile file("ProdHash");
+        //    if (!file.open(QIODevice::ReadOnly))
+        //        return;
+        //    QDataStream in(&file);
+
+        //    in >> prod;
+        //    file.close();
+
+
+////////////////////////
 
     QHashIterator<QString,Producto> i(prod);
     while (i.hasNext()){
@@ -118,13 +130,17 @@ void GuiProducto::on_pushButton_2_clicked()
 
 void GuiProducto::on_pushButton_clicked()
 {
-    QFile file("ProdHash");
-    if (!file.open(QIODevice::WriteOnly))
-        return;
-    QDataStream out(&file);
-    out << prod;
-    file.close();
-    this->close();
+
+    ProductoArchivo archi;
+    archi.guardarProducto(prod,"ProdHash");
+
+//    QFile file("ProdHash");
+//    if (!file.open(QIODevice::WriteOnly))
+//        return;
+//    QDataStream out(&file);
+//    out << prod;
+//    file.close();
+//    this->close();
 }
 
 void GuiProducto::on_comboMarca_currentTextChanged()
