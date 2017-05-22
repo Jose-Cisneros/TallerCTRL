@@ -4,6 +4,8 @@
 #include <QDialog>
 #include "head.h"
 #include "productoArchivo.h"
+#include"mmarchivo.h"
+
 
 namespace Ui {
 class guiProd_nuevo;

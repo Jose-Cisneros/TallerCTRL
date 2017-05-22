@@ -1,5 +1,6 @@
 #ifndef GUIPRODUCTO_H
 #define GUIPRODUCTO_H
+#include "mmarchivo.h"
 
 #include <QDialog>
 #include "productoArchivo.h"

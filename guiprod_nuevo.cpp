@@ -24,13 +24,15 @@ guiProd_nuevo::guiProd_nuevo(QWidget *parent) :
     ui->eliminar_2->setEnabled(false);
 
 
+    MMArchivo file;
+    file.cargarMM(autos,"MMHash");
 
-    QFile file("MMHash");
-    if (!file.open(QIODevice::ReadOnly))
-        return;
-    QDataStream in(&file);
-    in >> autos;
-    file.close();
+//    QFile file("MMHash");
+//    if (!file.open(QIODevice::ReadOnly))
+//        return;
+//    QDataStream in(&file);
+//    in >> autos;
+//    file.close();
 
 
     //cargo las keys unicas a la lista aux
@@ -168,12 +170,15 @@ void guiProd_nuevo::on_nuevo_2_clicked()
 
         //Agrego key y value al archivo//
 
-        QFile file("MMHash");
-        if (!file.open(QIODevice::WriteOnly))
-            return;
-        QDataStream out(&file);
-        out << autos;
-        file.close();
+        MMArchivo fileS;
+        fileS.guardarMM(autos,"MMHash");
+
+//        QFile file("MMHash");
+//        if (!file.open(QIODevice::WriteOnly))
+//            return;
+//        QDataStream out(&file);
+//        out << autos;
+//        file.close();
     }
 }
 
@@ -278,10 +283,5 @@ void guiProd_nuevo::on_eliminar_2_clicked(){}
 //    qDeleteAll(ui->listWidget_2->selectedItems());
 
 //    //actualizo el archivo
-//    QFile file("MMHash");
-//    if (!file.open(QIODevice::WriteOnly))
-//        return;
-//    QDataStream out(&file);
-//    out << autos;
-//    file.close();
+
 //}

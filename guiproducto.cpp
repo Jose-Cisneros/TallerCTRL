@@ -54,13 +54,17 @@ GuiProducto::GuiProducto(QWidget *parent) :
 
   //cargo modelos y marcas
     QHash<QString,QString> HAux;
-    QFile file2("MMHash");
-    if (!file2.open(QIODevice::ReadOnly))
-        return;
-    QDataStream in2(&file2);
 
-    in2 >> HAux;
-    file2.close();
+    MMArchivo file2;
+    file2.cargarMM(HAux,"MMHash");
+
+//    QFile file2("MMHash");
+//    if (!file2.open(QIODevice::ReadOnly))
+//        return;
+//    QDataStream in2(&file2);
+
+//    in2 >> HAux;
+//    file2.close();
 
     //cargo las keys unicas a la lista aux2
     QList<QString> aux2 = HAux.uniqueKeys();
@@ -146,13 +150,17 @@ void GuiProducto::on_pushButton_clicked()
 void GuiProducto::on_comboMarca_currentTextChanged()
 {
     QHash<QString,QString> HAux;
-    QFile file2("MMHash");
-    if (!file2.open(QIODevice::ReadOnly))
-        return;
-    QDataStream in(&file2);
 
-    in >> HAux;
-    file2.close();
+    MMArchivo file2;
+    file2.cargarMM(HAux, "MMHash");
+
+//    QFile file2("MMHash");
+//    if (!file2.open(QIODevice::ReadOnly))
+//        return;
+//    QDataStream in(&file2);
+
+//    in >> HAux;
+//    file2.close();
 
     QList<QString> aux;
     aux = HAux.values(ui->comboMarca->currentText());
