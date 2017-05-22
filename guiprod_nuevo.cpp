@@ -27,13 +27,6 @@ guiProd_nuevo::guiProd_nuevo(QWidget *parent) :
     MMArchivo file;
     file.cargarMM(autos,"MMHash");
 
-//    QFile file("MMHash");
-//    if (!file.open(QIODevice::ReadOnly))
-//        return;
-//    QDataStream in(&file);
-//    in >> autos;
-//    file.close();
-
 
     //cargo las keys unicas a la lista aux
     QList<QString> aux = autos.uniqueKeys();
@@ -173,12 +166,6 @@ void guiProd_nuevo::on_nuevo_2_clicked()
         MMArchivo fileS;
         fileS.guardarMM(autos,"MMHash");
 
-//        QFile file("MMHash");
-//        if (!file.open(QIODevice::WriteOnly))
-//            return;
-//        QDataStream out(&file);
-//        out << autos;
-//        file.close();
     }
 }
 

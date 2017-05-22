@@ -22,20 +22,6 @@ GuiProducto::GuiProducto(QWidget *parent) :
     ProductoArchivo archi;
     archi.cargarProductos(prod,"ProdHash");
 
-//FORMA VIEJA SIN CLASE
-
-
-        //    QFile file("ProdHash");
-        //    if (!file.open(QIODevice::ReadOnly))
-        //        return;
-        //    QDataStream in(&file);
-
-        //    in >> prod;
-        //    file.close();
-
-
-////////////////////////
-
     QHashIterator<QString,Producto> i(prod);
     while (i.hasNext()){
         i.next();
@@ -57,14 +43,6 @@ GuiProducto::GuiProducto(QWidget *parent) :
 
     MMArchivo file2;
     file2.cargarMM(HAux,"MMHash");
-
-//    QFile file2("MMHash");
-//    if (!file2.open(QIODevice::ReadOnly))
-//        return;
-//    QDataStream in2(&file2);
-
-//    in2 >> HAux;
-//    file2.close();
 
     //cargo las keys unicas a la lista aux2
     QList<QString> aux2 = HAux.uniqueKeys();
@@ -138,13 +116,6 @@ void GuiProducto::on_pushButton_clicked()
     ProductoArchivo archi;
     archi.guardarProductos(prod,"ProdHash");
 
-//    QFile file("ProdHash");
-//    if (!file.open(QIODevice::WriteOnly))
-//        return;
-//    QDataStream out(&file);
-//    out << prod;
-//    file.close();
-//    this->close();
 }
 
 void GuiProducto::on_comboMarca_currentTextChanged()
@@ -154,13 +125,6 @@ void GuiProducto::on_comboMarca_currentTextChanged()
     MMArchivo file2;
     file2.cargarMM(HAux, "MMHash");
 
-//    QFile file2("MMHash");
-//    if (!file2.open(QIODevice::ReadOnly))
-//        return;
-//    QDataStream in(&file2);
-
-//    in >> HAux;
-//    file2.close();
 
     QList<QString> aux;
     aux = HAux.values(ui->comboMarca->currentText());
