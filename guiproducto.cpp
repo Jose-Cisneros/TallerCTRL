@@ -1,6 +1,7 @@
 #include "guiproducto.h"
 #include "ui_guiproducto.h"
 #include "head.h"
+#include "QDebug"
 
 //ventanas//
 
@@ -16,29 +17,14 @@ GuiProducto::GuiProducto(QWidget *parent) :
 
     ui->setupUi(this);
     ui->pushButton->setEnabled(false);
+    ui->comboMarca->setEnabled(false);
+    ui->comboModelo->setEnabled(false);
 
     // creo la tabla con el archivo
+    imprimirTodos();
 
-    ProductoArchivo archi;
-    archi.cargarProductos(prod,"ProdHash");
 
-    QHashIterator<QString,Producto> i(prod);
-    while (i.hasNext()){
-        i.next();
-        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0, new QTableWidgetItem(i.value().getNroPieza()));
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1, new QTableWidgetItem(i.value().getNom()));
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2, new QTableWidgetItem(i.value().getMarca()));
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3, new QTableWidgetItem(i.value().getModelo()));
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,4, new QTableWidgetItem(i.value().getCategoria()));
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,5, new QTableWidgetItem(QString::number(i.value().getStock())));
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,6, new QTableWidgetItem(i.value().getPrecioCompra()));
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,7, new QTableWidgetItem(i.value().getPrecioLista()));
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,8, new QTableWidgetItem(i.value().getPrecioVta()));
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,9, new QTableWidgetItem(QString::number(i.value().getDescuento())));
-    }
-
-  //cargo modelos y marcas
+    //cargo modelos y marcas
     QHash<QString,QString> HAux;
 
     MMArchivo file2;
@@ -59,6 +45,95 @@ GuiProducto::~GuiProducto()
 {
     delete ui;
 }
+
+//prodecimientos de manejo de tabla
+
+void GuiProducto::imprimirTodos()
+{
+
+    ProductoArchivo archi;
+    archi.cargarProductos(prod,"ProdHash");
+
+
+    QHashIterator<QString,Producto> i(prod);
+    while (i.hasNext()){
+        i.next();
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0, new QTableWidgetItem(i.value().getNroPieza()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1, new QTableWidgetItem(i.value().getNom()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2, new QTableWidgetItem(i.value().getMarca()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3, new QTableWidgetItem(i.value().getModelo()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,4, new QTableWidgetItem(i.value().getCategoria()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,5, new QTableWidgetItem(QString::number(i.value().getStock())));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,6, new QTableWidgetItem(i.value().getPrecioCompra()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,7, new QTableWidgetItem(i.value().getPrecioLista()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,8, new QTableWidgetItem(i.value().getPrecioVta()));
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,9, new QTableWidgetItem(QString::number(i.value().getDescuento())));
+
+    }
+
+
+
+}
+
+
+void GuiProducto::imprimirPorMarca(QString marca)
+{
+
+    ProductoArchivo archi;
+    archi.cargarProductos(prod,"ProdHash");
+
+    QHashIterator<QString,Producto> i(prod);
+    while (i.hasNext()){
+        i.next();
+        if (i.value().getMarca() == marca){
+            ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0, new QTableWidgetItem(i.value().getNroPieza()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1, new QTableWidgetItem(i.value().getNom()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2, new QTableWidgetItem(i.value().getMarca()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3, new QTableWidgetItem(i.value().getModelo()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,4, new QTableWidgetItem(i.value().getCategoria()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,5, new QTableWidgetItem(QString::number(i.value().getStock())));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,6, new QTableWidgetItem(i.value().getPrecioCompra()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,7, new QTableWidgetItem(i.value().getPrecioLista()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,8, new QTableWidgetItem(i.value().getPrecioVta()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,9, new QTableWidgetItem(QString::number(i.value().getDescuento())));
+        }
+    }
+
+
+
+}
+
+
+void GuiProducto::imprimirPorModelo(QString modelo)
+{
+
+    ProductoArchivo archi;
+    archi.cargarProductos(prod,"ProdHash");
+
+    QHashIterator<QString,Producto> i(prod);
+    while (i.hasNext()){
+        i.next();
+        if (i.value().getModelo() == modelo){
+            ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0, new QTableWidgetItem(i.value().getNroPieza()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1, new QTableWidgetItem(i.value().getNom()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,2, new QTableWidgetItem(i.value().getMarca()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,3, new QTableWidgetItem(i.value().getModelo()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,4, new QTableWidgetItem(i.value().getCategoria()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,5, new QTableWidgetItem(QString::number(i.value().getStock())));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,6, new QTableWidgetItem(i.value().getPrecioCompra()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,7, new QTableWidgetItem(i.value().getPrecioLista()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,8, new QTableWidgetItem(i.value().getPrecioVta()));
+            ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,9, new QTableWidgetItem(QString::number(i.value().getDescuento())));
+        }
+    }
+
+
+
+}
+
 
 void GuiProducto::on_nuevo_clicked()
 {
@@ -96,14 +171,18 @@ void GuiProducto::on_nuevo_clicked()
         aux.setDescuento(guiPN.descuento());
         aux.setProv(guiPN.prov());
 
-        //lo agrego al hash con el numero de producto como key
+        //lo agrego al hash con el numero de producto como key y lo guardo en el archivo
 
         prod.insert(guiPN.nroPieza(),aux);
 
         ui->pushButton->setEnabled(true);
 
+
     }
 }
+
+
+
 
 void GuiProducto::on_pushButton_2_clicked()
 {
@@ -115,30 +194,96 @@ void GuiProducto::on_pushButton_clicked()
 
     ProductoArchivo archi;
     archi.guardarProductos(prod,"ProdHash");
+    this->close();
+
 
 }
 
 void GuiProducto::on_comboMarca_currentTextChanged()
 {
-    QHash<QString,QString> HAux;
+    if(ui->radioButton->isChecked()) {
 
-    MMArchivo file2;
-    file2.cargarMM(HAux, "MMHash");
+        ui->tableWidget->setRowCount(0);
+        if (ui->comboMarca->currentText() == "Seleccionar"){
+
+            ui->comboModelo->setCurrentIndex(1);
+            ui->comboModelo->setEnabled(false);
+
+            imprimirTodos();
+
+        } else {
+
+            ui->comboModelo->setEnabled(true);
+            QHash<QString,QString> HAux;
+
+            MMArchivo file2;
+            file2.cargarMM(HAux, "MMHash");
 
 
-    QList<QString> aux;
-    aux = HAux.values(ui->comboMarca->currentText());
-    ui->comboModelo->clear();
+            QList<QString> aux;
+            aux = HAux.values(ui->comboMarca->currentText());
+            ui->comboModelo->clear();
 
-    for (int i = 0; i < aux.size(); ++i){
-        ui->comboModelo->addItem(aux.at(i));
+
+            ui->comboModelo->addItem("Todos");
+            for (int i = 0; i < aux.size(); ++i){
+                ui->comboModelo->addItem(aux.at(i));
+            }
+
+
+
+        }
     }
 }
 
 void GuiProducto::on_eliminar_clicked()
 {
-        prod.remove(ui->tableWidget->itemAt(ui->tableWidget->currentRow(),1)->text());
-        ui->tableWidget->removeRow(ui->tableWidget->currentRow());
-        ui->pushButton->setEnabled(true);
+    prod.remove(ui->tableWidget->itemAt(ui->tableWidget->currentRow(),1)->text());
+    ui->tableWidget->removeRow(ui->tableWidget->currentRow());
+    ui->pushButton->setEnabled(true);
 
+}
+
+
+void GuiProducto::on_radioButton_clicked()
+{
+    if(ui->radioButton->isChecked()){
+
+        ui->comboMarca->setEnabled(true);
+        ui->comboModelo->setEnabled(true);
+
+
+    }
+
+    if(ui->radioButton->isChecked() == false){
+
+        ui->comboMarca->setEnabled(false);
+        ui->comboModelo->setEnabled(false);
+        ui->comboMarca->setCurrentText("Seleccionar");
+        ui->comboModelo->setCurrentText("Todos");
+        ui->tableWidget->setRowCount(0);
+
+        imprimirTodos();
+
+
+    }
+}
+
+
+void GuiProducto::on_comboModelo_currentTextChanged()
+{
+    if(ui->radioButton->isChecked()) {
+
+        ui->tableWidget->setRowCount(0);
+        if (ui->comboModelo->currentText() == "Todos"){
+
+            imprimirPorMarca(ui->comboMarca->currentText());
+
+        } else {
+
+            //Agrego todos los productos con el modelo elegido a la tabla
+
+            imprimirPorModelo(ui->comboModelo->currentText());
+        }
+    }
 }

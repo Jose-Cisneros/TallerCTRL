@@ -171,13 +171,13 @@
     <rect>
      <x>450</x>
      <y>70</y>
-     <width>371</width>
+     <width>421</width>
      <height>51</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QRadioButton" name="filtrar">
+     <widget class="QRadioButton" name="radioButton">
       <property name="font">
        <font>
         <pointsize>14</pointsize>
@@ -205,6 +205,11 @@
       <property name="toolTip">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Marca&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
+      <item>
+       <property name="text">
+        <string>Seleccionar</string>
+       </property>
+      </item>
      </widget>
     </item>
     <item>
@@ -224,6 +229,11 @@
       <property name="toolTip">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modelo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
+      <item>
+       <property name="text">
+        <string>Todos</string>
+       </property>
+      </item>
      </widget>
     </item>
    </layout>

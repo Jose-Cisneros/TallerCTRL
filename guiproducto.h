@@ -28,8 +28,15 @@ private slots:
 
     void on_eliminar_clicked();
 
+    void on_radioButton_clicked();
+
+    void on_comboModelo_currentTextChanged();
+
 private:
     Ui::GuiProducto *ui;
+    void imprimirTodos();
+    void imprimirPorMarca(QString marca);
+    void imprimirPorModelo(QString modelo);
 };
 
 #endif // GUIPRODUCTO_H

@@ -1,12 +1,12 @@
 #include "productoArchivo.h"
-
+#include "QDebug"
 ProductoArchivo::ProductoArchivo()
 {
 
 
 }
 
-void ProductoArchivo::guardarProductos(QHash<QString, Producto> &prod, QString archivo)
+void ProductoArchivo::guardarProductos(QHash<QString, Producto> prod, QString archivo)
 {
 
     QFile file(archivo);
@@ -14,6 +14,7 @@ void ProductoArchivo::guardarProductos(QHash<QString, Producto> &prod, QString a
         return;
     QDataStream out(&file);
     out << prod;
+    file.close();
 
 
 }
