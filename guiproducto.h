@@ -32,11 +32,16 @@ private slots:
 
     void on_comboModelo_currentTextChanged();
 
+    void on_buscar_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::GuiProducto *ui;
     void imprimirTodos();
     void imprimirPorMarca(QString marca);
     void imprimirPorModelo(QString modelo);
+    void imprimirPorBusqueda(QString bsq, QString mod, QString mar);
 };
 
 #endif // GUIPRODUCTO_H
