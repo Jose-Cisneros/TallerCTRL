@@ -1,9 +1,9 @@
-#ifndef PROVEEDORES_H
-#define PROVEEDORES_H
+#ifndef PROVEEDOR_H
+#define PROVEEDOR_H
 #include <head.h>
 #include <QDataStream>
 
-class proveedores
+class Proveedor
 {
 
 public:
@@ -25,20 +25,20 @@ public:
 
     //constructores//
 
-    proveedores();
-    proveedores(QString nom,int tele,int tele2,QString correo,int nroProv,QString razonS);
+    Proveedor();
+    Proveedor(int nroProv, QString nom,QString razonS, QString correo, int tele,int tele2);
 
 
     //OPERADOR << PARA GUARDAR CLASE EN ARCHIVO//
 
-    friend QDataStream &operator <<(QDataStream &out, const proveedores &s)
+    friend QDataStream &operator <<(QDataStream &out, const Proveedor &s)
         {
             out<< s.nombre << s.email << s.nroDeProv << s.razonSocial << s.telefono << s.telefono2;
             return out;
         }
     //OPERADOR >> PARA CARGAR ARCHIVO//
 
-    friend QDataStream &operator >> (QDataStream &in, proveedores &s)
+    friend QDataStream &operator >> (QDataStream &in, Proveedor &s)
         {
             in>> s.nombre >> s.email >> s.nroDeProv >> s.razonSocial >> s.telefono >> s.telefono2;
             return in;

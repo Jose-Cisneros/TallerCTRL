@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "head.h"
 #include "productoArchivo.h"
+#include "dbproveedor.h"
 
 namespace Ui {
 class guiproveedores;

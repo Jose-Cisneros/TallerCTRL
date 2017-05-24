@@ -37,7 +37,7 @@ guiProd_nuevo::guiProd_nuevo(QWidget *parent) :
     }
 
 
-    QHash<QString,proveedores> pAux;
+    QHash<QString,Proveedor> pAux;
 //    ProductoArchivo file;
 //    file.cargarProducto(pAux,"PHash");
 

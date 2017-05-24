@@ -3,6 +3,7 @@
 #include <QtGlobal>
 #include <QObject>
 #include <QTextStream>
+#include <QtSql/QtSql>
 
 #include <QString>
 #include <QList>
@@ -20,7 +21,7 @@
 
 #include <empleado.h>
 #include <cliente.h>
-#include <proveedores.h>
+#include <proveedor.h>
 #include <producto.h>
 
 

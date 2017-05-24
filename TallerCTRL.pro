@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,7 +19,6 @@ SOURCES += main.cpp\
     empleado.cpp \
     guiempleado.cpp \
     guiempleado_nuevo.cpp \
-    proveedores.cpp \
     guiproveedores.cpp \
     guiprov_nuevo.cpp \
     producto.cpp \
@@ -29,7 +29,10 @@ SOURCES += main.cpp\
     guiprod_nuevo_modelo.cpp \
     empleadosave.cpp \
     productoArchivo.cpp \
-    mmarchivo.cpp
+    mmarchivo.cpp \
+    proveedor.cpp \
+    dbmanager.cpp \
+    dbproveedor.cpp
 
 HEADERS  += taller.h \
     cliente.h \
@@ -37,7 +40,6 @@ HEADERS  += taller.h \
     head.h \
     guiempleado.h \
     guiempleado_nuevo.h \
-    proveedores.h \
     guiproveedores.h \
     guiprov_nuevo.h \
     producto.h \
@@ -48,7 +50,10 @@ HEADERS  += taller.h \
     guiprod_nuevo_modelo.h \
     empleadosave.h \
     productoArchivo.h \
-    mmarchivo.h
+    mmarchivo.h \
+    proveedor.h \
+    dbmanager.h \
+    dbproveedor.h
 
 FORMS    += taller.ui \
     guiempleado.ui \

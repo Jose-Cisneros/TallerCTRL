@@ -1,14 +1,15 @@
 #include "taller.h"
 #include <QApplication>
 #include <head.h>
-
-#include <QTextStream>
-
+#include "dbmanager.h"
 
 
 
 int main(int argc, char *argv[])
 {
+
+
+    DBManager("taller.db");
 
     QApplication a(argc, argv);
     a.setStyle("fusion");
