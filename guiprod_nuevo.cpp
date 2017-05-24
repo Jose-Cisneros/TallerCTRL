@@ -7,12 +7,15 @@
 
 //datos//
 #include "marca.h"
+#include "dbproveedor.h"
 
 #include <QFile>
 #include <QDataStream>
 #include <QtDebug>
 
 static QHash<QString,QString> autos; //Corregir//
+
+DBProveedor DBProv;
 
 guiProd_nuevo::guiProd_nuevo(QWidget *parent) :
     QDialog(parent),
@@ -37,28 +40,14 @@ guiProd_nuevo::guiProd_nuevo(QWidget *parent) :
     }
 
 
-    QHash<QString,Proveedor> pAux;
-//    ProductoArchivo file;
-//    file.cargarProducto(pAux,"PHash");
+    //Cargo proveedores al comboBox
+    QList<QString> listProv;
+    DBProv.listarProveedores(listProv);
+    for (int i=0; i < listProv.size(); i++){
+        ui->comboProv->addItem(listProv[i]);
 
-    QFile file2("PHash");
-    if (!file2.open(QIODevice::ReadOnly))
-        return;
-
-    QDataStream in2(&file2);
-    in2 >> pAux ;
-    file2.close();
-
-
-
-    //cargo las keys unicas a la lista aux2
-    QList<QString> aux2 = pAux.uniqueKeys();
-
-
-    //recorro la lista y agrego a comboProv
-    for (int i = 0; i < aux2.size(); ++i){
-        ui->comboProv->addItem(aux2.at(i));
     }
+
 
 }
 
@@ -192,7 +181,7 @@ void guiProd_nuevo::imprimirPorAno()
     //solo agrega los que coincidan con el año del spinbox
     for (int i = 0; i < aux.size(); ++i){
         if (aux.at(i).contains(ui->spinBox->text())){
-        ui->listWidget_2->addItem(aux.at(i));
+            ui->listWidget_2->addItem(aux.at(i));
         }
     }
 }
@@ -210,12 +199,12 @@ void guiProd_nuevo::on_listWidget_itemClicked(QListWidgetItem *item)
 
     if (ui->radioButton->isChecked()){
 
-            imprimirPorAno();
+        imprimirPorAno();
 
-     } else {
-            imprimirTodos();
-     }
+    } else {
+        imprimirTodos();
     }
+}
 
 
 void guiProd_nuevo::on_radioButton_clicked()

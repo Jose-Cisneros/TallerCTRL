@@ -4,22 +4,24 @@
 #include "proveedor.h"
 
 
-//DBProveedor DBP;
-QList<QString> listaProv;
+DBProveedor DBP;
+
 
 
 guiproveedores::guiproveedores(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::guiproveedores)
 {
+    ui->setupUi(this);
+
+    QList<QString> listProv;
+    DBP.listarProveedores(listProv);
 
 
-//    QList<QString> listProv = DBP.listarProveedores();
+    for (int i=0; i < listProv.size(); i++){
+      ui->listWidget->addItem(listProv[i]);
 
-//    for (int i; i < listProv.size(); i++){
-
-//        ui->listWidget->addItem(listProv[i]);
-//    }
+    }
 
 
     ui->Eliminar->setEnabled(false);
@@ -43,7 +45,7 @@ void guiproveedores::on_Agregar_clicked()
 
        Proveedor prov(guiPN.nrop(),guiPN.nombre(),guiPN.rsoc(),guiPN.mail(),guiPN.tele1(),guiPN.tele2());
 
-//       DBP.agregar(prov);
+    DBP.agregar(prov);
 
    }
 }
@@ -53,16 +55,16 @@ void guiproveedores::on_listWidget_itemClicked(QListWidgetItem *item)
 //Muestra los datos del proveedor seleccionado//
 {
 
-//    Proveedor a;
-//    a = listaProv.value(ui->listWidget->currentItem()->text());
+    Proveedor a;
 
+    a = DBP.datosProv(ui->listWidget->currentItem()->text());
 
-//    ui->nom->setText(a.verNom());
-//    ui->tel1->setText(QString::number(a.verTele()));
-//    ui->tel2->setText(QString::number(a.verTele2()));
-//    ui->mail->setText(a.verCorreo());
-//    ui->rzonsoc->setText(a.verRS());
-//    ui->nroprov->setText(QString::number(a.verNro()));
+    ui->nom->setText(a.verNom());
+    ui->tel1->setText(QString::number(a.verTele()));
+    ui->tel2->setText(QString::number(a.verTele2()));
+    ui->mail->setText(a.verCorreo());
+    ui->rzonsoc->setText(a.verRS());
+    ui->nroprov->setText(QString::number(a.verNro()));
 
     ui->Eliminar->setEnabled(true);
     ui->Editar->setEnabled(true);

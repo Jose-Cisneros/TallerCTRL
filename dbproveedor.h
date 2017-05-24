@@ -8,7 +8,7 @@ class DBProveedor
 public:
     DBProveedor();
     void agregar(Proveedor prov);
-    QList<QString> listarProveedores();
+    void listarProveedores(QList<QString> &lp);
     Proveedor datosProv(QString nom);
 
 
